@@ -11,7 +11,10 @@ echo "APL_COMMON_TAG= $APL_COMMON_TAG"
 echo "DB_UTILS_TAG= $DB_UTILS_TAG"
 
 #Installing some tools
-apt update && apt install -y wget bsdtar openssl libc-dev gcc nc && apt autoremove -y && rm -rf /var/lib/apt/lists/*
+apt update \
+    && apt install -y wget bsdtar openssl libc-dev gcc netcat bsdtar openssh-server \
+    && apt -y autoremove \
+    && rm -rf /var/lib/apt/lists/*
 
 #Setting up SSH server
 mkdir /var/run/sshd
