@@ -31,7 +31,7 @@ pip install --upgrade https://applariat:$BB_API_KEY@bitbucket.org/applariat/apl-
 #pulling and installing apl-admin
 wget https://applariat:$BB_API_KEY@bitbucket.org/applariat/apl-admin/get/${APL_ADMIN_TAG}.zip
 mkdir -p /usr/src/app
-bsdtar -xf $APL_ADMIN_TAG -s'|[^/]*/||' -C /usr/src/app
+bsdtar -xf $APL_ADMIN_TAG.zip -s'|[^/]*/||' -C /usr/src/app
 cd /usr/src/app/
 ls -alh
 pip install .
