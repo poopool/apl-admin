@@ -12,9 +12,11 @@ echo "DB_UTILS_TAG= $DB_UTILS_TAG"
 
 #Installing some tools
 apt update \
-    && apt install -y wget bsdtar openssl libc-dev gcc netcat bsdtar openssh-server \
+    && apt install -y wget bsdtar openssl libc-dev gcc netcat bsdtar openssh-server supervisor \
     && apt -y autoremove \
     && rm -rf /var/lib/apt/lists/*
+
+cp -rf /supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 #Setting up SSH server
 mkdir /var/run/sshd

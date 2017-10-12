@@ -14,7 +14,7 @@ echo Making sure rethinkdb and api are up and responding...
 while true
 do
   rethinkdb_svc_status=$(nc -z rethinkdb 29015; echo $?)
-  api_svc_status=$(nc -z api 8080; echo $?)
+  api_svc_status=$(nc -z api 80; echo $?)
   if [ $rethinkdb_svc_status -ne 0 ] || [ $api_svc_status -ne 0 ]
   then
     echo "waiting for rethinkdb and api services to become available..."
